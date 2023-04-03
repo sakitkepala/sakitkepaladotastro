@@ -1,15 +1,67 @@
 ---
+import Page from "../layouts/Page.astro";
+import Nav from "../components/Nav.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Page title="Halaman depan">
+  <div class="layout-grid">
+    <div class="nav">
+      <Nav />
+    </div>
+
+    <div class="sakitkepala-container">
+      <h1 class="sakitkepala">sakitkepala</h1>
+    </div>
+
+    <main class="content">
+      <h2 class="headline">"hello world"</h2>
+
+      <p>Hai. Gak nyangka bisa sampai ke sini. Selamat kalau gitu.</p>
+
+      <p><i>Anw</i>, web site ini masih <i>under construction</i>.</p>
+    </main>
+  </div>
+</Page>
+
+<style is:inline>
+  .layout-grid {
+    height: 100%;
+    display: grid;
+    grid-template-columns: minmax(600px, 1fr) minmax(600px, 1fr);
+    grid-template-rows: auto 1fr;
+  }
+
+  .layout-grid .nav {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+  }
+
+  .layout-grid .sakitkepala-container {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: end;
+  }
+
+  .layout-grid .content {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .content {
+    margin-top: 12rem;
+
+    font-size: 1.625rem;
+    max-width: 72ch;
+  }
+
+  .sakitkepala-container {
+    margin-bottom: 3rem;
+  }
+
+  .sakitkepala {
+    text-transform: uppercase;
+    font-size: 3rem;
+    font-weight: 900;
+  }
+</style>

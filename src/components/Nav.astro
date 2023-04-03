@@ -1,0 +1,11 @@
+---
+// Referensi current url:
+// https://docs.astro.build/en/reference/api-reference/#astrourl
+const isCurrentPage = (path: string) => (Astro.url.pathname === path ? "current-page" : undefined);
+---
+
+<nav>
+  <a href="/" class={isCurrentPage("/")}> sakitkepala</a>
+  <a href="/dika" class={isCurrentPage("/dika")}> Dika</a>
+  <a href="/tulisan" class={isCurrentPage("/tulisan")}> Tulisan</a>
+</nav>
